@@ -1,0 +1,34 @@
+{
+    "name" : "ScoutEvent/DataBundle",
+    "description" : "A bundle to hold the entities for use in other bundles.",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Chris Staite",
+        "email" : "chris@yourdreamnet.co.uk"
+    }],
+    "keywords" : [
+        "Scout Event Management"
+    ],
+    "license" : [
+        "GPL"
+    ],
+    "require" : {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.6.*",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "~1.2",
+    },
+    "autoload" : {
+        "psr-0" : {
+            "ScoutEvent\\DataBundle" : ""
+        }
+    },
+    "target-dir" : "ScoutEvent/DataBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "0.1-dev"
+        }
+    }
+}

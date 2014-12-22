@@ -1,0 +1,4 @@
+services:
+#    scout_data.example:
+#        class: ScoutEvent\DataBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
