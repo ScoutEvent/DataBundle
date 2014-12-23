@@ -3,6 +3,7 @@
 namespace ScoutEvent\DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * HealthForm
@@ -65,6 +66,10 @@ class HealthForm
      * @var string
      *
      * @ORM\Column(name="emergencyPhone", type="string", length=16)
+     * @Assert\Regex(
+     *     pattern="/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/",
+     *     match=true,
+     *     message="Please enter a valid UK phone number")
      */
     private $emergencyPhone;
     
@@ -86,6 +91,10 @@ class HealthForm
      * @var string
      *
      * @ORM\Column(name="doctorPhone", type="string", length=16)
+     * @Assert\Regex(
+     *     pattern="/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/",
+     *     match=true,
+     *     message="Please enter a valid UK phone number")
      */
     private $doctorPhone;
     

@@ -3,6 +3,9 @@
 namespace ScoutEvent\DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use ScoutEvent\DataBundle\Validator\Constraints as CustomAssert;
+
 use ScoutEvent\BaseBundle\Entity\User;
 
 /**
@@ -10,6 +13,7 @@ use ScoutEvent\BaseBundle\Entity\User;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @CustomAssert\DateRange(message="The start date must be before the end date")
  */
 class Event
 {

@@ -3,6 +3,8 @@
 namespace ScoutEvent\DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 use ScoutEvent\BaseBundle\Entity\User;
 
 /**
@@ -45,6 +47,10 @@ class GroupUnit
      * @var string
      *
      * @ORM\Column(name="phone", type="string", length=16)
+     * @Assert\Regex(
+     *     pattern="/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/",
+     *     match=true,
+     *     message="Please enter a valid UK phone number")
      */
     private $phone;
 

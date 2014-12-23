@@ -3,6 +3,8 @@
 namespace ScoutEvent\DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 use ScoutEvent\DataBundle\Entity\GroupUnit;
 use ScoutEvent\DataBundle\Entity\Event;
 use ScoutEvent\BaseBundle\Entity\User;

@@ -1,4 +1,5 @@
 services:
-#    scout_data.example:
-#        class: ScoutEvent\DataBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    daterange.validator:
+        class: ScoutEvent\DataBundle\Validator\Constraints\DateRangeValidator
+        tags:
+            - { name: validator.constraint_validator, alias: daterange_validator }
