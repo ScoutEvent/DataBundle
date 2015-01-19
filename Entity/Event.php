@@ -72,7 +72,13 @@ class Event
      * @ORM\Column(name="summary", type="text")
      */
     private $summary;
-
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string", length=255, nullable=true)
+     */
+    private $link;
 
     /**
      * Get id
@@ -244,8 +250,32 @@ class Event
     {
         return $this->summary;
     }
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     * @return Event
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string 
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
     
     public function __toString() {
         return $this->name;
     }
+
 }

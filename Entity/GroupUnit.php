@@ -42,6 +42,14 @@ class GroupUnit
      * @ORM\ManyToOne(targetEntity="ScoutEvent\BaseBundle\Entity\User")
      */
     private $owner;
+    
+    /**
+     * Assistants to the group
+     *
+     * @ORM\ManyToMany(targetEntity="ScoutEvent\BaseBundle\Entity\User")
+     * @ORM\JoinTable(name="group_assistant")
+     */
+    private $assistants;
 
     /**
      * @var string
