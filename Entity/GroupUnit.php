@@ -201,6 +201,21 @@ class GroupUnit
         return $this->assistants;
     }
     
+    /**
+     * Return whether the user is authorised
+     *
+     * @param User $user
+     * @return boolean
+     */
+    public function isManager($user)
+    {
+        if (getOwner()->getId() == $user->getId())
+        {
+            return true;
+        }
+        return $this->assistants->contains($user);
+    }
+    
     public function __toString() {
         return $this->name;
     }
