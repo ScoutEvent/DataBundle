@@ -3,6 +3,7 @@
 namespace ScoutEvent\DataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 use ScoutEvent\BaseBundle\Entity\User;
@@ -61,7 +62,10 @@ class GroupUnit
      *     message="Please enter a valid UK phone number")
      */
     private $phone;
-
+    
+    public function __construct() {
+        $this->assistants = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -163,6 +167,38 @@ class GroupUnit
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    /**
+     * Add assistant
+     *
+     * @param User $assistant
+     */
+    public function addAssistant(User $assistant)
+    {
+        if (!$this->assistants->contains($assistant)) {
+            $this->assistants->add($assistant);
+        }
+    }
+
+    /**
+     * Remove assistant
+     *
+     * @param User $assistant
+     */
+    public function removeAssistant(User $assistant)
+    {
+        $this->assistants->removeElement($assistant);
+    }
+
+    /**
+     * Get assistants
+     *
+     * @return ArrayCollection 
+     */
+    public function getAssistants()
+    {
+        return $this->assistants;
     }
     
     public function __toString() {
