@@ -81,6 +81,20 @@ class Event
     private $link;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="swimming", type="boolean")
+     */
+    private $swimming = false;
+    
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="shooting", type="boolean")
+     */
+    private $shooting = false;
+    
+    /**
      * Get id
      *
      * @return integer 
@@ -272,6 +286,52 @@ class Event
     public function getLink()
     {
         return $this->link;
+    }
+
+    /**
+     * Set swimming
+     *
+     * @param boolean $swimming
+     * @return HealthForm
+     */
+    public function setSwimming($swimming)
+    {
+        $this->swimming = $swimming;
+
+        return $this;
+    }
+
+    /**
+     * Get swimming
+     *
+     * @return boolean 
+     */
+    public function getSwimming()
+    {
+        return $this->swimming;
+    }
+
+    /**
+     * Set shooting
+     *
+     * @param boolean $shooting
+     * @return HealthForm
+     */
+    public function setShooting($shooting)
+    {
+        $this->shooting = $shooting;
+
+        return $this;
+    }
+
+    /**
+     * Get shooting
+     *
+     * @return boolean 
+     */
+    public function getShooting()
+    {
+        return $this->shooting;
     }
     
     public function __toString() {

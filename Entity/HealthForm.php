@@ -37,7 +37,7 @@ class HealthForm
     /**
      * @var string
      *
-     * @ORM\Column(name="membershipNumber", type="string", length=10)
+     * @ORM\Column(name="membershipNumber", type="string", length=10, nullable=true)
      */
     private $membershipNumber;
     
@@ -101,14 +101,14 @@ class HealthForm
     /**
      * @var string
      *
-     * @ORM\Column(name="allergies", type="text")
+     * @ORM\Column(name="allergies", type="text", nullable=true)
      */
     private $allergies;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="dietary", type="text")
+     * @ORM\Column(name="dietary", type="text", nullable=true)
      */
     private $dietary;
 
@@ -125,6 +125,13 @@ class HealthForm
      * @ORM\Column(name="signatureDate", type="datetime")
      */
     private $signatureDate;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="swimming", type="boolean", nullable=true)
+     */
+    private $swimming;
     
     /**
      * @param Participant $participant
@@ -462,6 +469,29 @@ class HealthForm
     public function getSignatureDate()
     {
         return $this->signatureDate;
+    }
+
+    /**
+     * Set swimming
+     *
+     * @param boolean $swimming
+     * @return HealthForm
+     */
+    public function setSwimming($swimming)
+    {
+        $this->swimming = $swimming;
+
+        return $this;
+    }
+
+    /**
+     * Get swimming
+     *
+     * @return boolean 
+     */
+    public function getSwimming()
+    {
+        return $this->swimming;
     }
 
 }
