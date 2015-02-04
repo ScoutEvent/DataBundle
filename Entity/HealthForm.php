@@ -125,13 +125,6 @@ class HealthForm
      * @ORM\Column(name="signatureDate", type="datetime")
      */
     private $signatureDate;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="swimming", type="boolean", nullable=true)
-     */
-    private $swimming;
     
     /**
      * @param Participant $participant
@@ -469,29 +462,6 @@ class HealthForm
     public function getSignatureDate()
     {
         return $this->signatureDate;
-    }
-
-    /**
-     * Set swimming
-     *
-     * @param boolean $swimming
-     * @return HealthForm
-     */
-    public function setSwimming($swimming)
-    {
-        $this->swimming = $swimming;
-
-        return $this;
-    }
-
-    /**
-     * Get swimming
-     *
-     * @return boolean 
-     */
-    public function getSwimming()
-    {
-        return $this->swimming;
     }
 
 }

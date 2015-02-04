@@ -79,13 +79,6 @@ class Event
      * @ORM\Column(name="link", type="string", length=255, nullable=true)
      */
     private $link;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="swimming", type="boolean")
-     */
-    private $swimming = false;
     
     /**
      * @var boolean
@@ -286,29 +279,6 @@ class Event
     public function getLink()
     {
         return $this->link;
-    }
-
-    /**
-     * Set swimming
-     *
-     * @param boolean $swimming
-     * @return HealthForm
-     */
-    public function setSwimming($swimming)
-    {
-        $this->swimming = $swimming;
-
-        return $this;
-    }
-
-    /**
-     * Get swimming
-     *
-     * @return boolean 
-     */
-    public function getSwimming()
-    {
-        return $this->swimming;
     }
 
     /**
