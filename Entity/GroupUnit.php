@@ -209,7 +209,7 @@ class GroupUnit
      */
     public function isManager($user)
     {
-        if (getOwner()->getId() == $user->getId())
+        if ($this->getOwner()->getId() == $user->getId())
         {
             return true;
         }
