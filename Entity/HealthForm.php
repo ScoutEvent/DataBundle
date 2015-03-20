@@ -111,6 +111,13 @@ class HealthForm
      * @ORM\Column(name="dietary", type="text", nullable=true)
      */
     private $dietary;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="medical", type="text", nullable=true)
+     */
+    private $medical;
 
     /**
      * @var string
@@ -416,6 +423,29 @@ class HealthForm
     public function getDietary()
     {
         return $this->dietary;
+    }
+
+    /**
+     * Set medical
+     *
+     * @param string $medical
+     * @return HealthForm
+     */
+    public function setMedical($medical)
+    {
+        $this->medical = $medical;
+
+        return $this;
+    }
+
+    /**
+     * Get medical
+     *
+     * @return string 
+     */
+    public function getMedical()
+    {
+        return $this->medical;
     }
 
     /**
