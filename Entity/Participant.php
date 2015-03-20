@@ -57,7 +57,7 @@ class Participant
 
     /**
      * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\HealthForm", cascade={"remove"})
-     * @ORM\JoinColumn(referencedColumnName="id", name="participant_id")
+     * @ORM\JoinColumn(name="id", referencedColumnName="participant_id")
      */
     private $healthForm;
 
