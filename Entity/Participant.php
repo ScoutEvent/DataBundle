@@ -56,6 +56,12 @@ class Participant
      */
     private $youngPerson;
 
+    /**
+     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\HealthForm")
+     * @ORM\JoinColumn(name="id", referencedColumnName="participant_id", nullable=true)
+     */
+    private $healthForm;
+    
 
     /**
      * Get id
@@ -187,9 +193,7 @@ class Participant
      */
     public function deleteHealthForm()
     {
-        $healthForm = $this->getDoctrine()
-            ->getRepository('ScoutEventDataBundle:HealthForm')
-            ->find(getId());
-        if ($healthForm) $healthForm->remove();
+        if ($this->healthForm) $this->healthForm->remove();
+        $this->healthForm = null;
     }
 }
