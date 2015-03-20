@@ -14,7 +14,6 @@ use ScoutEvent\BaseBundle\Entity\User;
  *
  * @ORM\Table()
  * @ORM\Entity
- * @ORM\HasLifecycleCallbacks
  */
 class Participant
 {
@@ -57,7 +56,7 @@ class Participant
     private $youngPerson;
 
     /**
-     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\HealthForm", mappedBy="participant")
+     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\HealthForm", mappedBy="participant", cascade={"remove"})
      */
     private $healthForm;
     
@@ -185,14 +184,5 @@ class Participant
     public function getYoungPerson()
     {
         return $this->youngPerson;
-    }
-    
-    /**
-     * @ORM\PreRemove
-     */
-    public function deleteHealthForm()
-    {
-        if ($this->healthForm) $this->healthForm->remove();
-        $this->healthForm = null;
     }
 }
