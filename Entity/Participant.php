@@ -55,6 +55,12 @@ class Participant
      */
     private $youngPerson;
 
+    /**
+     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\HealthForm", cascade={"remove"})
+     * @ORM\JoinColumn(referencedColumnName="id", name="participant_id")
+     */
+    private $healthForm;
+
 
     /**
      * Get id
