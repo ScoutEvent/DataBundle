@@ -55,7 +55,7 @@ class Event
     private $coordinator;
 
     /**
-     * @ORM\ManyToOne(targetEntity="\ScoutEvent\BaseBundle\Entity\User", cascade={"ALL"})
+     * @ORM\ManyToOne(targetEntity="\ScoutEvent\BaseBundle\Entity\User")
      */
     private $owner;
 
