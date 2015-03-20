@@ -88,6 +88,16 @@ class Event
     private $shooting = false;
     
     /**
+     * @ORM\OneToMany(targetEntity="Participant", mappedBy="event", cascade={"remove"})
+     */
+    private $participants;
+    
+    
+    public function __construct() {
+        $this->participants = new ArrayCollection();
+    }
+    
+    /**
      * Get id
      *
      * @return integer 

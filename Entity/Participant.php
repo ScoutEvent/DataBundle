@@ -44,7 +44,7 @@ class Participant
     private $groupUnit;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Event")
+     * @ORM\ManyToOne(targetEntity="Event", inversedBy="participants")
      */
     private $event;
 
