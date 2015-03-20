@@ -15,8 +15,8 @@ class HealthForm
 {
     /**
      * @ORM\Id
-     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\Participant")
-     * @ORM\JoinColumn(name="participant_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\Participant", inversedBy="healthForm")
+     * @ORM\JoinColumn(name="participant_id", referencedColumnName="id", nullable=true)
      */
     private $participant;
     

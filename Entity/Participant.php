@@ -57,8 +57,7 @@ class Participant
     private $youngPerson;
 
     /**
-     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\HealthForm")
-     * @ORM\JoinColumn(name="id", referencedColumnName="participant_id", nullable=true)
+     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\HealthForm", mappedBy="participant")
      */
     private $healthForm;
     
