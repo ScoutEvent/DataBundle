@@ -134,6 +134,12 @@ class HealthForm
     private $signatureDate;
     
     /**
+     * @ORM\OneToOne(targetEntity="ScoutEvent\DataBundle\Entity\StoredFile", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="picture_id", referencedColumnName="id", nullable=true)
+     */
+    private $picture;
+    
+    /**
      * @param Participant $participant
      */
     public function __construct($participant)
@@ -492,6 +498,29 @@ class HealthForm
     public function getSignatureDate()
     {
         return $this->signatureDate;
+    }
+
+    /**
+     * Set picture
+     *
+     * @param ScoutEvent\DataBundle\Entity\StoredFile $picture
+     * @return HealthForm
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return ScoutEvent\DataBundle\Entity\StoredFile 
+     */
+    public function getPicture()
+    {
+        return $this->picture;
     }
 
 }

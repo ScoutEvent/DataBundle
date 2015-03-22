@@ -3,3 +3,9 @@ services:
         class: ScoutEvent\DataBundle\Validator\Constraints\DateRangeValidator
         tags:
             - { name: validator.constraint_validator, alias: daterange_validator }
+
+    stored_file.directory_injector:
+        class: ScoutEvent\DataBundle\EventListener\StoredFileDirectoryInjector
+        tags:
+            - { name: doctrine.event_subscriber }
+        arguments: [ %kernel.root_dir% ]
